@@ -1,0 +1,594 @@
+/* ==========================================================================
+   HAIRCUT SELECTOR - Premium Glassmorphism Dark Theme & Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-dark: #080a11;
+  --bg-card: rgba(18, 24, 42, 0.72);
+  --bg-card-hover: rgba(26, 35, 60, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(139, 92, 246, 0.35);
+
+  --accent-violet: #8b5cf6;
+  --accent-pink: #ec4899;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-rose: #f43f5e;
+  --accent-cyan: #06b6d4;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.25);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(236, 72, 153, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(8, 10, 17, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-violet);
+}
+
+/* Layout Container */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Header & Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--accent-violet), var(--accent-pink));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ffffff, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Workflow Step Navigator */
+.step-stepper {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.step-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.step-pill.active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(236, 72, 153, 0.25));
+  border-color: var(--accent-violet);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.step-pill.completed {
+  color: var(--accent-emerald);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step-pill.active .step-num {
+  background: var(--accent-violet);
+  color: white;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-violet), var(--accent-pink));
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  border: 1px solid var(--border-glass);
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-emerald {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+}
+
+/* Step 1: Photo Input Section */
+.upload-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .upload-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dropzone {
+  border: 2px dashed rgba(139, 92, 246, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: rgba(139, 92, 246, 0.03);
+}
+
+.dropzone:hover, .dropzone.dragover {
+  border-color: var(--accent-pink);
+  background: rgba(236, 72, 153, 0.08);
+}
+
+.webcam-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.webcam-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.face-guide-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 300px;
+  border: 2px dashed rgba(139, 92, 246, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.45);
+}
+
+.preset-models {
+  margin-top: 32px;
+}
+.preset-models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.preset-model-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+.preset-model-card:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-violet);
+}
+.preset-model-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.preset-model-card label {
+  display: block;
+  padding: 6px;
+  font-size: 12px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Step 2: Face Scanner Animation */
+.scanner-view {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-glow);
+}
+.scan-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  box-shadow: 0 0 15px var(--accent-cyan);
+  animation: scanMove 2.2s ease-in-out infinite alternate;
+}
+@keyframes scanMove {
+  0% { top: 0%; }
+  100% { top: 96%; }
+}
+
+.mesh-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(6, 182, 212, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* Step 3: Main Studio Layout */
+.studio-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr 360px;
+  gap: 24px;
+}
+@media (max-width: 1200px) {
+  .studio-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hairstyle Catalog Sidebar */
+.catalog-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: 820px;
+}
+.catalog-filters {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-glass);
+}
+.search-box {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: white;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.pills-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.pill-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.pill-btn.active {
+  background: var(--accent-violet);
+  color: white;
+}
+
+.hairstyles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 16px;
+  overflow-y: auto;
+}
+.hairstyle-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  text-align: center;
+}
+.hairstyle-card:hover, .hairstyle-card.selected {
+  border-color: var(--accent-violet);
+  background: rgba(139, 92, 246, 0.12);
+  transform: translateY(-2px);
+}
+.hairstyle-card.selected::after {
+  content: '✓ Selected';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--accent-violet);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+.hairstyle-thumb {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+.hairstyle-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.hairstyle-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Center Try-On Canvas Studio */
+.canvas-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-canvas {
+  max-width: 100%;
+  max-height: 560px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+}
+.main-canvas:active {
+  cursor: grabbing;
+}
+
+.controls-bar {
+  width: 100%;
+  margin-top: 16px;
+  padding: 20px;
+}
+.control-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.control-row label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.range-slider {
+  accent-color: var(--accent-violet);
+  width: 100%;
+  cursor: pointer;
+}
+
+/* AI Analysis Panel Right */
+.analysis-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.verdict-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.badge-violet {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c084fc;
+  border: 1px solid var(--accent-violet);
+}
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid var(--accent-emerald);
+}
+.badge-rose {
+  background: rgba(244, 63, 94, 0.2);
+  color: #fb7185;
+  border: 1px solid var(--accent-rose);
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* Modal Window */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 12, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-content {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.toast {
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--accent-violet);
+  color: white;
+  font-size: 14px;
+  box-shadow: var(--shadow-glow);
+}
